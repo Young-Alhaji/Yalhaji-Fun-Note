@@ -106,7 +106,7 @@ function signin(){
  				<td>${currentClientContact[i].name}  </td>
  				<td>${currentClientContact[i].phonenumber} </td>
  				<td>${currentClientContact[i].email}</td>
- 				<td><button class='del' onclick="Delete(${i})"><i class="fa-duotone fa-trash"></i></button></td>
+ 				<td><button class='del' onclick="Delete(${i})">X</button></td>
  				</tr>`
     })
 }
