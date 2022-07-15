@@ -1,0 +1,30 @@
+body{
+    background-image: linear-gradient(170deg, deeppink,purple);
+}
+.container{
+    max-width: 400px;
+    height: 100%;
+}
+#inpu{
+    color: deeppink;
+    border: none;
+    background-color: rgb(84, 74, 64,);
+    max-width: 400px;
+}
+.todos li{
+    background:purple;
+    color: white;
+}
+.add button{
+    background-color: rgb(249, 4, 192);
+    border: none;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+}
+.add button:hover{
+    background-color: white;
+    color:  rgb(249, 4, 192);
+    transition: 0.8s;
+}

@@ -1,0 +1,90 @@
+
+body{
+	background: linear-gradient(purple, #e91e63) ;
+	font-family: sans-serif;
+
+}
+
+
+/*animation code has ended  */
+.center{
+	border: 3px solid rgba(255, 255, 255, .15);
+	margin: auto;
+	padding: 10px;
+	width: 33%;
+	border-radius: 15px;
+	background: rgba(255,255,255,0.1);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+	text-align: center;
+
+}
+h2{
+	text-align: center;
+	font-style: italic;
+	font-family: monokai;
+	color:  #e91e63;
+}
+h2.inbox{
+	text-align: center;
+	font-style: italic;
+	color: black;
+	font-family: monokai;
+}
+input.short{
+	height: 30px;
+	margin: 1%;
+width: 43%;
+}
+input.long{
+height: 30px;
+margin: 1%;
+width: 95%;
+}
+h3{
+text-align: center;
+font-style: italic;
+color: #e91e63;
+font-family: sans-serif;
+}
+.line{
+	border-bottom: 2px solid black;
+}
+button{
+width: 34%;
+height: 35px;
+color: white;
+background-color: black;
+cursor: pointer;
+border-radius: 20px;
+}
+a{
+color: black;
+font-size: 120%;
+text-decoration: none;
+}
+.innertext{
+color: red;
+font-weight: bold;
+}
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+.center{
+	border: 3px solid rgba(255, 255, 255, .15);
+	margin: auto;
+	padding: 10px;
+	width: 60%;
+	border-radius: 15px;
+	background: rgba(255,255,255,0.1);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+	text-align: center;
+
+}
+
+
+
+}

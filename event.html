@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUN NOTE | EVENTS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b90bd97998.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="icon.png" type="image/png">
+
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+       *{
+           margin: 0;
+           box-sizing: border-box;
+           list-style-type: none;
+           text-decoration: none;
+           font-family: 'Poppins', sans-serif;
+       }
+       body{
+           background-color:pink;
+       }
+       .sidebar{
+           background-image: linear-gradient(170deg, deeppink,purple);
+           height: auto;
+           border-radius: 40px;
+           width: 15%;
+           z-index: 5;
+           border-top-left-radius: 40px;
+           border-bottom-left-radius: 40px;
+           border-bottom-right-radius: 30px;
+           border-top-right-radius: 30px;
+       }
+       .sidebar ul li{
+         width: 210px;
+         cursor: pointer;
+       }
+       .sidebar ul li:hover{
+         background-color: white;
+         color: deeppink;
+         cursor: pointer;
+         border-radius: 20px;
+         height: 50px;
+         text-align: center;
+         transition: 1s;
+       }
+       .sidebar ul li a{
+         color: white;
+       } 
+       .sidebar ul li:hover a {
+         color: deeppink;
+       }
+       .sidebar ul li a .fa-solid{
+         color: white;
+       }
+       .sidebar ul li:hover .fa-solid{
+         color: deeppink;
+       }
+       .main{
+         border-radius: 40px;
+         border-bottom-left-radius: 15px;
+         border-top-left-radius: 15px;
+         border-bottom-right-radius: 40px;
+         border-top-right-radius: 40px;
+         background-color: white;
+         z-index: 10;
+         height: auto;
+       }
+       @media screen and(max-width:1140px) {
+         *{
+           text-align: center;
+           align-items: center;
+         }
+         body{
+            background-color: black;
+            height: auto;
+         }
+       
+       .sidebar{
+           background-image: linear-gradient(170deg, deeppink,purple);
+           height: auto;
+           border-radius: 40px;
+           width: 15%;
+           z-index: 5;
+           border-top-left-radius: 40px;
+           border-bottom-left-radius: 40px;
+           border-bottom-right-radius: 30px;
+           border-top-right-radius: 30px;
+       }
+       .sidebar ul li:hover{
+         background-color: white;
+         color: deeppink;
+         cursor: pointer;
+         border-radius: 20px;
+         /* height: 50px; */
+         /* text-align: center; */
+         transition: 1s;
+       }
+       .sidebar ul li a{
+         color: white;
+       } 
+       .sidebar ul li:hover a {
+         color: deeppink;
+       }
+       .sidebar ul li a .fa-solid{
+         color: white;
+       }
+       .sidebar ul li:hover .fa-solid{
+         color: deeppink;
+       }
+       .main{
+         border-radius: 40px;
+         border-bottom-left-radius: 15px;
+         border-top-left-radius: 15px;
+         border-bottom-right-radius: 40px;
+         border-top-right-radius: 40px;
+         background-color: white;
+         z-index: 10;
+         height: auto;
+       } 
+       }
+       @media screen and (max-width: 640px) {
+        .sidebar{
+           display: block;
+           background-image: linear-gradient(170deg, deeppink,purple);
+           height: auto;
+           width: 30%;
+           z-index: 5;
+           border-bottom-left-radius: 0px;
+           border-bottom-right-radius: 0px;
+           border-top-right-radius: 0;
+           border-top-left-radius: 0;
+           /* margin-top: 30%; */
+       }
+       .sidebar ul li a{
+         color: white;
+         padding: 0;
+         margin-left: -20px;
+       }
+       .sidebar ul li:hover{
+         background-color: white;
+         color: deeppink;
+         cursor: pointer;
+         border-radius: 20px;
+         margin-left: -20px;
+         /* height: 50px; */
+         /* text-align: center; */
+         transition: 1s;
+       }
+       .sidebar ul li:hover a {
+         color: deeppink;
+       }
+       .main{
+        /* margin-top: 30%; */
+         display: block;
+         width: 70%;
+         height: 100%;
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+         border-top-right-radius: 0;
+         border-top-left-radius: 0;
+       }
+       }
+    
+    
+       @media screen and (max-width: 576px) {
+        body{
+            background-color: deeppink;
+        } 
+        .sidebar{
+           display: block;
+           background-image: linear-gradient(170deg, deeppink,purple);
+           height: auto;
+           width: 30%;
+           z-index: 5;
+           border-bottom-left-radius: 0px;
+           border-bottom-right-radius: 0px;
+           /* margin-top: 30%; */
+       }
+       .sidebar ul li a{
+         color: white;
+         padding: 0;
+         margin-left: -30px;
+       }
+       .sidebar ul li:hover{
+         background-color: white;
+         color: deeppink;
+         cursor: pointer;
+         border-radius: 20px;
+         margin-left: -50px;
+         /* height: 50px; */
+         /* text-align: center; */
+         transition: 1s;
+       }
+       .sidebar ul li:hover a {
+         color: deeppink;
+       }
+       .main{
+        /* margin-top: 30%; */
+         display: block;
+         width: 70%;
+         height: auto;
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+         border-top-right-radius: 0;
+         border-top-left-radius: 0;
+       }
+       }
+       /* .inf{
+         height: auto;
+       } */
+       </style>
+        <body>
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light my-1">
+                  <div class="container-fluid">
+                    <a class="navbar-brand text-danger" href="#">FunNote</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link active text-danger" aria-current="page" href="dashboard.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-danger" href="contact.html">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-danger" href="signin.html">Log out</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-danger" href="signup.html">Create Account</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>  
+            
+                      <div class="container-fluid py-lg-5">
+                        <div class="row">
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-2 px-lg-3 sidebar">
+                            <div class="title py-4 px-lg-3">
+                              <h2 class="text-white">FunNote</h2>
+                            </div>
+                            <ul class="px-lg-4 py-lg-3">
+                              <li class="py-2"><a href="dashboard.html" class="text-decoration-none"><i class="fa-solid fa-house-user px-1"></i> Home</a></li>
+                              <li class="py-2"><a href="contact.html" class="text-decoration-none"><i class="fa-solid px-1 fa-address-book"></i> Contact</a></li>
+                              <li class="py-2"><a href="" class="text-decoration-none"><i class="fa-solid fa-clipboard-list px-1"></i> Notes</a></li>
+                              <li class="py-2"><a href="#" class="text-decoration-none"><i class="fa-solid fa-star px-1"></i> Events</a></li>
+                              <li class="py-2"><a href="to_dolist.html" class="text-decoration-none"><i class="fa-solid px-1 fa-list-check"></i> To-do lists</a></li>
+                            </ul>
+                            <ul class="ul px-lg-4 py-5">
+                              <li class="py-2"><a href="" class="text-decoration-none"><i class="fa-solid fa-user px-1"></i> Profile</a></li>
+                              <li class="py-2"><a href="contactlist.html" class="text-decoration-none"><i class="fa-solid px-1 fa-box-archive"></i> contactlist</a></li>
+                              <li class="py-2"><a href="signin.html" class="text-decoration-none"><i class="fa-solid px-1 fa-door-open"></i>Sign Out</a></li>
+                            </ul>
+                          </div>
+                          <div class="col-8 main">
+                            <div class="col-12 py-3">
+                              <nav class="navbar navbar-light bg-light">
+                                <div class="container-fluid">
+                                  <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-danger" type="submit">Search</button>
+                                  </form>
+                                  <div class="justify-content-end text-danger text-center d-flex">
+                                    <i class="fa-solid fa-circle-user mt-1"></i>
+                                    <h6 id="userInfo" class="mt-1"> </h6>
+                                    <a href=""><i class="fa-regular fa-bell text-danger text-center"></i></a>
+                                  </div>
+                                </div>
+                              </nav>  
+                              <section class="inf mt-2 align-item-center">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-10 mx-auto my-3 shadow border-curved p-3">
+                                            <h3 class="text-center">Add Events</h3>
+                                            <div class="bg-light mb-3 col-12" id="displayEvents" style="height: auto;">
+    
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-7 col-md-12">
+                                                    <input type="text" class="form-control" placeholder="Add Events" id="eventInput">
+                                                </div>
+                                                <div class="col-lg-5 col-md-12 mt-md-2">
+                                                    <button class="btn btn-success btn" onclick="addEvents()">ADD EVENT</button>
+                                                    <button class="btn btn-danger btn-sm" onclick="clearEvents()">Clear Events</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>You Have <span id="eventCount">no</span> upcoming Events</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </section>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+    <script src="collabo.js">
+       
+    </script>
+    
+</body>
+</html>

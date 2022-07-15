@@ -1,0 +1,57 @@
+section{
+			font-family: sans-serif;
+			text-align: center;
+		}
+		h1{
+		color: black;	
+		font-style: italic;
+		font-family: cursive;
+		}
+		h2{
+			font-family: cursive;
+			color: #e91e63;
+		}
+		h3{
+			font-family: cursive;
+			color: black;
+		}
+		input{
+			height: 25px;
+			width: 30%;
+		}
+		button.sec{
+			height: 42px;
+			width: 6%;
+			color: #e91e63;
+			background-color: white;
+			font-size: 160%;
+			cursor: pointer;
+		}
+		a.icon{
+			text-decoration: none;
+			font-size: 180%;
+			color: #e91e63;
+		}
+		a{
+			text-decoration: none;
+			font-size: 100%;
+			color: #e91e63;
+		}
+		.innertext{
+			color: red;
+			font-weight: bolder;
+		}
+		@media screen and (max-width: 950px) {
+			button.sec{
+			height: 45px;
+			width: 13%;
+			color: #e91e63;
+			background-color: white;
+			font-size: 160%;
+			cursor: pointer;
+		}
+		input{
+			height: 35px;
+			width: 45%;
+		}
+		}
