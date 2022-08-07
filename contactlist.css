@@ -1,32 +1,41 @@
 body{
-			font-family: sans-serif;
+			font-family: 'Poppins',sans-serif;
 			text-align: center;
-			background: pink;
+			background: deeppink;
 		}
 		 tr,td{
             border: 2px solid grey;
             width: 180px;
-            background-color: purple;
-            font-family: sans-serif;
-            font-weight: bold;   
+            background-color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            color: deeppink;   
+        }
+        a{
+         color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 120%; 
         }
         th{
         border: 2px solid grey;	
         }
         h1.sec{
         	font-weight: bold;
+            color: white;
         }
         a.ico{
         	color: black;
         	text-decoration: none;
         	font-weight: bold;
         	font-size: 240%;
-        	margin: 5%;
+        	margin: 6%;
         }
         button.del{
-            background-color: black;
-            color: purple;
+            color: deeppink;
             font-weight: bold;
+            border: none;
+            background-color: white;
         }
         a.sec{
         	color: #e91e63;
@@ -42,7 +51,7 @@ body{
 
 @media screen and (max-width: 800px) {
     body{
-            font-family: sans-serif;
+            font-family:'Poppins', sans-serif;
             text-align: center;
             background: pink;
         }
@@ -66,8 +75,8 @@ body{
         tr,td{
             border: 2px solid grey;
             width: 150px;
-            background-color: purple;
-            font-family: sans-serif;
+            background-color: white;
+            font-family:'Poppins', sans-serif;
             font-weight: bold; 
             font-size: 90%;  
         }

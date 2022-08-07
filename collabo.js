@@ -10,7 +10,9 @@ let allClients=[]
 			surname:snam.value,
 			email:emai.value,
 			password:pass.value,
-			allContacts:[]	
+			allContacts:[],
+			todoArray:[],
+			notes:[]
 		}
 		let confirm=confir.value
 		let passwo=pass.value
@@ -106,9 +108,11 @@ function signin(){
  				<td>${currentClientContact[i].name}  </td>
  				<td>${currentClientContact[i].phonenumber} </td>
  				<td>${currentClientContact[i].email}</td>
- 				<td><button class='del' onclick="Delete(${i})">X</button></td>
+ 				<td><button class='del' onclick="Delete(${i})"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
  				</tr>`
     })
+    console.log(currentClientContact)
+  
 }
  		
  
@@ -130,141 +134,136 @@ const Delete = (inde)=>{
 
 
 // to-do javascripts begins
-i = JSON.parse(localStorage.indexes)
-allClients = JSON.parse(localStorage.allOfClients)
-todoArray = [];
-// getPreviousTodos = () => {
-// 	showTodos()
-// };
-const addTodo = () => {
-	if (todoInput.value == "") {
-		alert("enter a value")
-	} else {
-		let userTodo = todoInput.value;
-		todoItem = { item: userTodo, done: false };
-		todoArray.push(todoItem);
-		// allClients[i].events = events
-		todoInput.value = "";
-		showTodos();
-	}
-	// for (let index = 0; index < allClients.length; index++) {
-	// 	if(index==i){
-	// 		todoArray=allClients[index].todoArrays;
+todoArray=[]
+ getTodo=()=>{
+ 	i=JSON.parse(localStorage.indexes)
+ 	allClients=JSON.parse(localStorage.allOfClients)
+ 	currentClientTodo=JSON.parse(localStorage.allOfClients)[i].todoArray
+ 	if(currentClientTodo){
+ 		todoArray=currentClientTodo
+ 	}
+ 	allClients=JSON.parse(localStorage.allOfClients)
+ 	currentClientTodo=JSON.parse(localStorage.allOfClients)[i].todoArray
+ 	displayTodo.innerHTML=''
+ 	currentClientTodo.map((item,i)=>{	
+ 		displayTodo.innerHTML+=`<div class='todoli'>${currentClientTodo[i].todos} <br> <button class='javabutton' onclick="markDone(event)">Active</button>
+ 		 <button class='javabutton' onclick="deleteTodo(${i})"><i class="fa fa-trash" aria-hidden="true"></i></button> </div> <br>`
+ 		 eventCount.innerHTML= currentClientTodo.length
+ 	})
+ }
+
+
+ addTodo=()=>{
+ 	i=JSON.parse(localStorage.indexes)
+ 	allClients=JSON.parse(localStorage.allOfClients)
+ 	currentClientTodo=JSON.parse(localStorage.allOfClients)[i].todoArray
+
+ 	let oneTodo={
+ 		todos:todoInput.value,
+ 		doneTodo: false
+ 	}
+
+ 	if (todoInput.value==""){
+ 		nullInput.innerHTML="Add a To do input!"
+ 	}else{
+ 		todoArray.push(oneTodo)
+ 		allClients[i].todoArray=todoArray
+ 		localStorage.allOfClients=JSON.stringify (allClients)
+ 		todoInput.value=''
+ 		location.reload()
+ 	}
+ }
+
+ clearTodo=()=>{
+ 	i=JSON.parse(localStorage.indexes)
+ 	todoArray=JSON.parse(localStorage.allOfClients)[i].todoArray
+ 	todoArray=[]
+ 	allClients=JSON.parse(localStorage.allOfClients)
+ 	allClients[i].todoArray=todoArray
+ 	localStorage.allOfClients=JSON.stringify(allClients)
+ 	location.reload()
+ }
+
+
+
+markDone=(e)=>{
+i=JSON.parse(localStorage.indexes)
+ 	allClients=JSON.parse(localStorage.allOfClients)
+ 	doneTodo=JSON.parse(localStorage.allOfClients)[i].todoArray.doneTodo
+ 	currentClientTodo=JSON.parse(localStorage.allOfClients)[i].todoArray
+ 	doneTodo=currentClientTodo.doneTodo
+ 	filteredArray=currentClientTodo.filter((item,ind)=>e==ind)
+ 	currentClientTodo.doneTodo=filteredArray
+ 	allClients[i].todoArray.doneTodo=currentClientTodo.doneTodo
+ 	localStorage.allOfClients=JSON.stringify(allClients)
+ 	location.reload
+}
+
+
+deleteTodo=(inde)=>{
+	i=JSON.parse(localStorage.indexes)
+ 	allClients=JSON.parse(localStorage.allOfClients)
+ 	currentClientTodo=JSON.parse(localStorage.allOfClients)[i].todoArray
+ 	filteredArray=currentClientTodo.filter((item,ind)=>inde!=ind)
+ 	currentClientTodo=filteredArray
+ 	allClients[i].todoArray=currentClientTodo
+ 	localStorage.allOfClients=JSON.stringify(allClients)
+ 	location.reload()
+}
+
+
+	//notes array begins
+		 notes=[]
+ 		 getpreviousnote=()=>{
 			
-	// 		if (todoInput.value != "") {
-	// 			let todoItem = { item: todoInput.value, done: false };
-				
-	// 			todoArray.push(todoItem);
-	// 			// console.log(todoArray[0]);
-	// 			allClients[i].todoArray = todoArray;
-	// 			allOfClients = JSON.stringify(allClients)
-	// 			todoInput.value = "";	
-				
-	// 			localStorage.allOfClients = JSON.stringify(allClients);
-	// 			todoInput.value = "";
-	// 			showTodos();
-				
-	// 		} else {
-	// 			alert("enter a value")
-	// 		}
-				
-	// 	}
-		
-	// }
+ 			i=JSON.parse(localStorage.indexes)
+ 			currentClientNote=JSON.parse(localStorage.allOfClients)[i].notes
+ 			if(currentClientNote){
+ 			 notes=currentClientNote
+ 			}
+ 	}
+ 		 addNote=()=>{
+ 		i=JSON.parse(localStorage.indexes)
+ 			allClients=JSON.parse(localStorage.allOfClients)
+ 			let eachNote={
+ 				title:noteTitle.value,
+ 				note:not.value
+ 			}
+ 			if(noteTitle.value==''||not.value==''){
+ 				success.innerText=('Kindly fill in both fields!')
+ 			}
+ 			else{	
+ 				notes.push(eachNote)
+ 				allClients[i].notes = notes
+ 				localStorage.allOfClients = JSON.stringify(allClients);
+ 				noteTitle.value=''
+ 				not.value=''
+ 				success.innerText=('Note added Successfully')
+ 			}
+ 		}
 
-}
 
-
-showTodos = () => {
-	
-	// i = JSON.parse(localStorage.indexes)
-	// // currentClientTodos = JSON.parse(localStorage.allOfClients)[i].todoArray;
-	// for (ind=0; ind<allClients.length; ind++) {
-	// 	if(i==ind){
-	// 		// console.log(allClients[ind].todoArray)
-	// 	todoArray=allClients[ind].todoArray;
-	today = new Date
-		userInfo.innerText = `Welcome ${allClients[i].firstname}`
-	// 	todoArray=allClients[ind].todoArrays;
-		todoInfo = "";
-		for (i = 0; i < todoArray.length; i++) {
-		if (todoArray[i].done) {
-		todoInfo += `<div class="shadow p-3 mb-1 text-success">${todoArray[i].item}<button class="float-end btn btn-success btn-sm">DONE</button></div>`;
-		} else {
-			todoInfo += `<div class="shadow p-3 mb-1 text-danger">${todoArray[i].item}<button class="float-end btn-danger btn-sm" onclick="markDone(${i})">MARK AS DONE</button></div>`;
-		}
-	}
-	displayTodo.innerHTML = todoInfo;
-	showCount();
-		}
-// 	}
-	
-// }
-showCount = () => {
-	let pending = todoArray.filter(todo => !todo.done)
-	taskCount.innerHTML = pending.length;
-}
-clearTodo = () => {
-
-	todoArray = [];
-	showTodos();
-}
-markDone = (index) => {
-	todoArray[index].done = true;
-	// console.log(todoArray[index])
-	showTodos();
+ 			 const notelist = ()=>{
+	i=JSON.parse(localStorage.indexes)
+ 	currentClientNote=JSON.parse(localStorage.allOfClients)[i].notes
+    currentClientNote.map((item,i)=>{
+        tab.innerHTML += `<div class='margin'> (Page ${i+1}) <button class='del' onclick="deleteNote(${i})"><i class="fa fa-trash" aria-hidden="true"></i></button><br>
+ 				<div class='insidetitlecolor'>${currentClientNote[i].title}</div> <br>
+ 				<div class='insidecolor'>${currentClientNote[i].note}</div>
+ 				</div> <br>`
+    })
+    console.log(currentClientNote)
+  
 }
 
-// to-do javascripts ends
-// events javascript starts
-events = [];
-getPreviousEvent = () => {
-	// i  = JSON.parse(localStorage.indexes)
-	// currentClientEvents = JSON.parse(localStorage.allOfClients)[i].events;
-	// console.log(currentClientEvents)
-	// if(currentClientEvents){
-	// 	events = currentClientEvents;
-	// }
-}
-addEvents = () => {
-	if (eventInput.value == "") {
-		alert("enter a value")
-	} else {
-		let upcomingEvents = eventInput.value;
-		eventItem = { item: upcomingEvents, done: false };
-		events.push(eventItem);
-		// allClients[i].events = events
-		eventInput.value = "";
-		showEvents();
-	}
-}
 
-showEvents = () => {
-	eventsInfo = "";
-	for (i = 0; i < events.length; i++) {
-		// userInfo.innerText= `Hello, ${allClients[i].firstname}`
-		if (events[i].done) {
-			eventsInfo += `<div class="shadow p-3 mb-1 text-success">${events[i].item}<button class="float-end btn btn-success btn-sm">DONE</button></div>`;
-		} else {
-			eventsInfo += `<div class="shadow p-3 mb-1 text-danger">${events[i].item}<button class="float-end btn-danger btn-sm" onclick="markEvent(${i})">Mark As Done</button></div>`;
-		}
-	}
-	displayEvents.innerHTML = eventsInfo;
-	showEventCount();
+const deleteNote = (inde)=>{
+	i=JSON.parse(localStorage.indexes)
+	currentClientNote=JSON.parse(localStorage.allOfClients)[i].notes
+    let filteredArray =currentClientNote.filter((item,ind)=>inde!=ind)
+    currentClientNote = filteredArray
+    allClients=JSON.parse(localStorage.allOfClients)
+    allClients[i].notes = currentClientNote
+    localStorage.allOfClients = JSON.stringify(allClients)
+    location.reload()
 }
-showEventCount = () => {
-	let pending = events.filter(event => !event.done)
-	eventCount.innerHTML = pending.length;
-}
-clearEvents = () => {
-	events = [];
-	showEvents();
-}
-markEvent = (index) => {
-	events[index].done = true;
-	// console.log(todoArray[index])
-	showEvents();
-}
-today = new Date()
-console.log(today);
-	// events javascript ends

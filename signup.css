@@ -33,12 +33,18 @@ h2.inbox{
 input.short{
 	height: 30px;
 	margin: 1%;
-width: 43%;
+width: 45%;
+outline: none;
+border: none;
+padding: 2px;
 }
 input.long{
 height: 30px;
 margin: 1%;
 width: 95%;
+outline: none;
+border: none;
+padding: 2px;
 }
 h3{
 text-align: center;
@@ -77,7 +83,7 @@ font-weight: bold;
 	border: 3px solid rgba(255, 255, 255, .15);
 	margin: auto;
 	padding: 10px;
-	width: 60%;
+	width: 70%;
 	border-radius: 15px;
 	background: rgba(255,255,255,0.1);
 	box-shadow: 0 20px 50px rgba(0, 0, 0, .15);

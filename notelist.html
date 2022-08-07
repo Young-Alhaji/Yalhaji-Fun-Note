@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b90bd97998.js" crossorigin="anonymous"></script>
     <link rel="icon" href="icon.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" type="text/css">
 </head>
 <style>
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
@@ -35,12 +35,29 @@ text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
+.insidetitlecolor{
+background-color: deeppink;
+width: 50%;
+margin: auto;
+padding: 10px;
+ border-radius: 13px;
+ color: white;
+}
 .insidecolor{
 background-color: deeppink;
 width: 90%;
 margin: auto;
 padding: 10px;
  border-radius: 13px;
+ color: white;
+}
+
+button.del{
+background-color: white;
+border: none;
+color: deeppink;
+font-weight: bold;
+font-size: 120%;
 }
 
 .main{
@@ -54,13 +71,30 @@ padding: 10px;
   z-index: 10;
 }
 section{
-      font-family:'Poppins', sans-serif;
-      text-align: center;
-      height: auto;
-    }
-    .navBackColor{
-      background-color: deeppink;
-    }
+font-family:'Poppins', sans-serif;
+text-align: center;
+height: auto;
+}
+.navBackColor{
+background-color: deeppink;
+}
+.margin{
+  margin: auto;
+  border: 2px solid deeppink;
+  padding: 10px 0px;
+  width: 95%;
+  border-radius: 10px;
+}
+a.ico{
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 240%;
+          margin: 6%;
+        }
+
+        
+
 
 
 
@@ -98,7 +132,7 @@ section{
    }
    
 </style>
-<body onload="getpreviousvalue()">
+<body onload="notelist()">
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light my-1">
       <div class="container-fluid">
@@ -148,27 +182,27 @@ section{
                     <marquee><h1 id="infos">Fun Note</h1></marquee>
                     
 <div class="insidecolor">                    
-  <h2 class="whitetext">Save your Contacts and get access to your list here whenever required </h2>
+  <h3 class="whitetext">Notebook </h3>
+  <h2><i class="fa-solid fa-book"></i></h2>
  </div><br><br>
-<h4 >Add contacts below...</h4>
- <div class="insidecolor">  
+
+ <div>  
   
-  <div>
-    <input type="text" id="nam" placeholder="Name" required minlength="4" maxlength="12"><br> <br> 
-        <input type="number" id="phone" placeholder="Phone No" required minlength="5" ><br><br>
-        <input type="email" id="eMail" placeholder="E-MAIL" required minlength="3" ><br>
-         <div class="innertext" id="innertext"></div> <br>
-       <button class="sec" onclick="add()"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
-       
-  </div> <br><br>
-  <a class="ico" href="contactlist.html"><i class="fa fa-address-book" aria-hidden="true"></i></a> <br> 
-  <a class="whitetext" href="contactlist.html">View your Contact Book</a> 
+  <div id="tab" >
+    
+</div>
+
+<div>
+  <a class="ico " href="notes.html"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+  <a class="ico" href="dashboard.html"><i class="fa fa-tachometer" aria-hidden="true"></i></a>
+  <a class="ico" href="signin.html"><i class="fa fa-sign-out" aria-hidden="true"></i></a> <br>
+  
 </div>
   
     
 
 
-                  </section>
+                    </section>
                 </div>
               </div>
             </div>

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUN NOTE | ADD CONTACTS</title>
+    <title>FUN NOTE | Contactlist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b90bd97998.js" crossorigin="anonymous"></script>
     <link rel="icon" href="icon.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="contactlist.css">
 </head>
 <style>
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
@@ -21,27 +21,16 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-color:white;
+    background-color:deeppink;
 }
-a{
-color: black;
- text-decoration: none;
- font-weight: bold;
- font-size: 120%;
-text-align: center; 
-}
-.whitetext{
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-}
-.insidecolor{
-background-color: deeppink;
-width: 90%;
-margin: auto;
-padding: 10px;
- border-radius: 13px;
-}
+button.sec{
+      height: 47px;
+      width: 100px;
+      color: #e91e63;
+      background-color: white;
+      font-size: 160%;
+      cursor: pointer;
+    }
 
 .main{
   height: 100%;
@@ -54,18 +43,35 @@ padding: 10px;
   z-index: 10;
 }
 section{
-      font-family:'Poppins', sans-serif;
+      font-family: sans-serif;
       text-align: center;
       height: auto;
     }
-    .navBackColor{
-      background-color: deeppink;
+    .title{
+      width: 200px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .note{
+      height: 300px;
+      width: 80%;
+      border-radius: 20px;
+      padding: 15px;
+      font-weight: bold;
+    }
+    #success{
+      color: white;
+      font-weight: bold;
+      font-size: 120%;
+    }
+    a:hover{
+      color: white;
     }
 
 
 
-@media screen and (max-width: 960px) {
-  
+@media screen and (max-width: 990px) {
+    
    .main{
     /* margin-top: 30%; */
      display: block;
@@ -82,8 +88,8 @@ section{
    }
 
 
-   @media screen and (max-width: 576px) {
-   
+   @media screen and (max-width: 770px) {
+    
    .main{
     /* margin-top: 30%; */
      display: block;
@@ -96,9 +102,8 @@ section{
      margin-top: 30px;
    }
    }
-   
 </style>
-<body onload="getpreviousvalue()">
+<body onload="getpreviousnote()">
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light my-1">
       <div class="container-fluid">
@@ -106,13 +111,13 @@ section{
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="dashboard.html">Home</a>
+              <a class="nav-link" href="dashboard.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="contactlist.html">Contacts</a>
+              <a class="nav-link" href="contactlist.html">Contacts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="to_dolist.html">To do list</a>
@@ -128,12 +133,12 @@ section{
       </div>
     </nav>  
 
-            <div class="navBackColor">.</div>
+          
               <div>
-                <div class="col-12 py-3 ">
-                  <nav class="navbar navbar-light bg-light ">
+                <div class="col-12 py-3">
+                  <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
-                      <form style="margin: auto; display: flex;">
+                      <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-danger" type="submit">Search</button>
                       </form>
@@ -144,30 +149,24 @@ section{
                       </div>
                     </div>
                   </nav>  
-                  <section>
-                    <marquee><h1 id="infos">Fun Note</h1></marquee>
+                  <section >
+                    <br> <br>
+                    <div id="success"></div>
+                    <div>
+                      <input type="text" class="title" placeholder="Title" name="" id="noteTitle">
+                    </div>
+                    <br><br>
+                    <div>
+                      <textarea class="note" id="not" placeholder="Type here"></textarea>
+                    </div>
+                    <div>
+                      <button class="sec" onclick="addNote()"><i class="fa fa-plus-circle" aria-hidden="true"></i></button> <br> <br>
+                      <a class="ico" href="notelist.html"><i class="fa-solid fa-book"></i></a> <br> 
+                      <a class="whitetext" href="notelist.html">View your NoteBook</a>
+                    </div>
                     
-<div class="insidecolor">                    
-  <h2 class="whitetext">Save your Contacts and get access to your list here whenever required </h2>
- </div><br><br>
-<h4 >Add contacts below...</h4>
- <div class="insidecolor">  
-  
-  <div>
-    <input type="text" id="nam" placeholder="Name" required minlength="4" maxlength="12"><br> <br> 
-        <input type="number" id="phone" placeholder="Phone No" required minlength="5" ><br><br>
-        <input type="email" id="eMail" placeholder="E-MAIL" required minlength="3" ><br>
-         <div class="innertext" id="innertext"></div> <br>
-       <button class="sec" onclick="add()"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
-       
-  </div> <br><br>
-  <a class="ico" href="contactlist.html"><i class="fa fa-address-book" aria-hidden="true"></i></a> <br> 
-  <a class="whitetext" href="contactlist.html">View your Contact Book</a> 
-</div>
-  
-    
-
-
+                    
+                     
                   </section>
                 </div>
               </div>
